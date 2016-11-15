@@ -6,6 +6,6 @@ import groovy.transform.CompileStatic
 class IndexController {
 
     def index() {
-        render servletContext.getResourceAsStream("/index.html").getText("UTF-8")
+        render servletContext.getResourceAsStream("index.html").getText("UTF-8")
     }
 }

@@ -17,6 +17,9 @@ spring:
     groovy:
         template:
             check-template-location: false
+server:
+  contextPath: '/'
+
 
 # Spring Actuator Endpoints are Disabled by Default
 endpoints:
@@ -26,6 +29,8 @@ endpoints:
 
 ---
 grails:
+    resources:
+        pattern: '/**'
     mime:
         disable:
             accept:

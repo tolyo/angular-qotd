@@ -1,6 +1,6 @@
 module.exports = {
   paths: {
-    'public':   'web-app',
+    'public':   'src/main/webapp',
     'watched':  ['app']
   },
 
