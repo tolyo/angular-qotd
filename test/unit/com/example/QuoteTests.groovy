@@ -12,6 +12,7 @@ import org.junit.*
 class QuoteTests {
 
     void testSomething() {
-       fail "Implement me"
+       Quote quote = new Quote()
+       assert quote.validate() == false
     }
 }

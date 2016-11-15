@@ -9,11 +9,11 @@ class QuoteController {
 	
 	def quoteService
 
-	def random = {
+	def random() {
 		[quote: quoteService.getRandom()]
 	}
 	
-	def ajaxRandom = {
+	def ajaxRandom() {
 		Quote quote = quoteService.getRandom()
 		render 	"""
 					<tr>
@@ -23,7 +23,7 @@ class QuoteController {
 				"""
 	}
 	
-	def jsonRandom = {
+	def jsonRandom() {
 		Quote quote = quoteService.getRandom()
 		render quote as JSON
 	}

@@ -2,16 +2,19 @@
 
 /* Controllers */
 
-function QuoteCtrl($scope, $http){
-    $http.get('/quote/jsonRandom').success(function(data){
-        $scope.quote = data;
-        }
-    );
+angular.module('quoteApp').controller('QuoteCtrl',
+  function QuoteCtrl($scope, $http){
 
-    $scope.refresh = function(){
-        $http.get('/quote/jsonRandom').success(function(data){
-                $scope.quote = data;
+      var loadQuote = function() {
+          $http.get('quote/jsonRandom').then(function (res) {
+                $scope.quote = res.data;
             }
-        );
-    }
-}
+          );
+      }
+
+      $scope.refresh = loadQuote;
+
+      loadQuote();
+  }
+
+)
