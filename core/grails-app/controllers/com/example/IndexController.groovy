@@ -1,11 +1,17 @@
 package com.example
 
-import groovy.transform.CompileStatic
+import grails.converters.JSON
 
-@CompileStatic
 class IndexController {
+
+    QuoteService quoteService
 
     def index() {
         render servletContext.getResourceAsStream("index.html").getText("UTF-8")
+    }
+
+    def quote() {
+        Quote quote =  quoteService.getRandomQuote()
+        render([ 'author': quote.author, 'content': quote.content] as JSON)
     }
 }

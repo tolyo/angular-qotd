@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: angular.qotd
+        defaultPackage: core
     spring:
         transactionManagement:
             proxies: false
@@ -17,9 +17,6 @@ spring:
     groovy:
         template:
             check-template-location: false
-server:
-  contextPath: '/'
-
 
 # Spring Actuator Endpoints are Disabled by Default
 endpoints:

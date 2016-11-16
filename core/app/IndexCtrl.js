@@ -2,11 +2,15 @@ const DELAY = 1000;
 
 class IndexCtrl {
 
-  constructor($interval) {
+  constructor($interval, $http) {
     this.currentTime = this.getDate();
     $interval(() => {
       this.currentTime = this.getDate();
     }, DELAY);
+
+    this.$http = $http;
+
+    this.getQuote();
   }
 
   getDate() {
@@ -20,8 +24,12 @@ class IndexCtrl {
     }
     return i;
   }
+
+  getQuote() {
+    this.$http.get('quote').then(res => this.quote = res.data);
+  }
 }
 
-IndexCtrl.$inject = ['$interval'];
+IndexCtrl.$inject = ['$interval', '$http'];
 
 export default IndexCtrl;
