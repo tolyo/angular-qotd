@@ -5,7 +5,7 @@
     config.set({
 
       // base path that will be used to resolve all patterns (eg. files, exclude)
-      basePath: '',
+      basePath: '../),
 
 
       // frameworks to use
@@ -21,7 +21,7 @@
         'karmaboot.js',
         'node_modules/angular-mocks/angular-mocks.js',
         'node_modules/angular-mocks/angular-scenario.js',
-        'app/**/*.spec.js'
+        'core/app/**/*.spec.js'
       ],
 
 
